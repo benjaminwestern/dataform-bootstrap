@@ -1,0 +1,22 @@
+# Core dependencies
+google-cloud-bigquery
+pyyaml
+ndjson
+dataclasses-json
+
+# Type checking and validation
+pydantic
+typing-extensions
+mypy
+
+# Logging and monitoring
+structlog
+rich
+
+# CLI enhancements
+click
+tqdm
+
+# Development tools
+python-dotenv
+ipython
