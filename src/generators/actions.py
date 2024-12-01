@@ -87,7 +87,7 @@ class DataformActionsGenerator:
         """
         column_config = {
             'name': column.name,
-            'type': column.field_type.lower(),
+            # 'type': column.field_type.lower(), -- TODO, generate a 'schema' file but not in the actions.yaml
         }
         
         if column.description:
