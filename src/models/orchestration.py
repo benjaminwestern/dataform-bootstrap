@@ -52,6 +52,7 @@ class ProjectMigrationManager:
     def _setup_location(self, location_config: LocationConfig) -> OutputConfig:
         """Setup output configuration for a location."""
         workflow_config = {
+            'dataformCoreVersion': '3.0.8', # TODO hard coded version for now - make configurable later
             'defaultProject': self.config.project_id,
             'defaultDataset': location_config.default_dataset,
             'defaultLocation': location_config.location,
@@ -61,7 +62,7 @@ class ProjectMigrationManager:
         output_config = OutputConfig(location_config.output_dir)
         output_config.create_directories()
         
-        with open(location_config.output_dir / 'workflow_config.yaml', 'w') as f:
+        with open(location_config.output_dir / 'workflow_settings.yaml', 'w') as f:
             yaml.dump(workflow_config, f)
             
         return output_config
